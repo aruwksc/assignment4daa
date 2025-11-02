@@ -1,37 +1,14 @@
 package aitu.edu;
 
-import aitu.edu.graph.scc.KosarajuSCC;
-import aitu.edu.graph.scc.SCCResult;
-import aitu.edu.graph.util.Graph;
-import aitu.edu.graph.util.GraphBuilder;
-import aitu.edu.graph.util.TimerMetrics;
-import aitu.edu.graph.util.Metrics;
-import aitu.edu.graph.topo.DFSTopologicalSort;
-import aitu.edu.graph.topo.TaskOrderDeriver;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        String path = args.length > 0 ? args[0] : "data/tasks.json";
+        String input = args.length > 0 ? args[0] : "data/tasks.json";
+        String output = args.length > 1 ? args[1] : "data/reports.json";
 
-        Graph g = GraphBuilder.fromFile(path).build();
-        Metrics sccMetrics = new TimerMetrics();
+        TasksReportGenerator.generateReport(input, output);
 
-        SCCResult scc = KosarajuSCC.computeSCC(g, sccMetrics);
-
-        ObjectMapper om = new ObjectMapper();
-
-        Metrics topoMetrics = new TimerMetrics();
-        List<List<Integer>> condensation = TaskOrderDeriver.buildCondensation(g, scc);
-        List<Integer> componentOrder = DFSTopologicalSort.topologicalOrder(condensation, topoMetrics);
-        List<Integer> taskOrder = TaskOrderDeriver.deriveTaskOrderFromComponentOrder(componentOrder, scc);
-
-        String topoComponentOrderJson = om.writeValueAsString(componentOrder);
-        String topoTaskOrderJson = om.writeValueAsString(taskOrder);
-        System.out.println(topoComponentOrderJson);
-        System.out.println(topoTaskOrderJson);
+        System.out.println("Report generated: " + output);
     }
 }
