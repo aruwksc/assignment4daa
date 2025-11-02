@@ -7,7 +7,6 @@ import aitu.edu.graph.topo.DFSTopologicalSort;
 import java.util.*;
 
 public class DagShortestPath {
-
     public static PathResult shortestPath(Graph g, int src, Metrics metrics) {
         if (g == null) throw new IllegalArgumentException("graph is null");
         int n = g.nodeCount();
@@ -25,6 +24,8 @@ public class DagShortestPath {
             if (dist[u] == PathResult.INF) continue;
             List<Integer> nbrs = g.neighbors(u);
             for (int v : nbrs) {
+                if (metrics != null) metrics.incRelaxation();
+
                 long vdur = g.durationOf(v).orElse(0L);
                 long cand = dist[u] + vdur;
                 if (cand < dist[v]) {
