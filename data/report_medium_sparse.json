@@ -1,0 +1,124 @@
+[ {
+  "graph_id" : 7,
+  "input_stats" : {
+    "vertices" : 14,
+    "edges" : 27,
+    "density" : "sparse",
+    "variant" : "one_cycle",
+    "source" : 5,
+    "weight_model" : "node"
+  },
+  "kosaraju_scc" : {
+    "num_sccs" : 1,
+    "sccs" : [ [ 0, 12, 7, 11, 5, 2, 13, 6, 4, 3, 10, 1, 8, 9 ] ],
+    "operations_count" : 82,
+    "execution_time_ns" : 21800
+  },
+  "condensation_graph" : {
+    "vertices" : 1,
+    "edges" : 0
+  },
+  "topological_sort" : {
+    "topological_order" : [ 0, 9, 6, 13, 2, 5, 11, 8, 1, 7, 12, 3, 10, 4 ],
+    "operations_count" : 41,
+    "execution_time_ns" : 6300
+  },
+  "shortest_path" : {
+    "source" : 5,
+    "destination" : "all_reachable",
+    "paths" : { },
+    "operations_count" : 0,
+    "execution_time_ns" : 200
+  },
+  "longest_path" : {
+    "critical_path_length" : 0,
+    "critical_path" : [ ],
+    "node_durations" : [ ],
+    "operations_count" : 0,
+    "execution_time_ns" : 100
+  },
+  "total_operations_count" : 123,
+  "total_execution_time_ns" : 28400
+}, {
+  "graph_id" : 8,
+  "input_stats" : {
+    "vertices" : 16,
+    "edges" : 38,
+    "density" : "sparse",
+    "variant" : "two_cycles",
+    "source" : 6,
+    "weight_model" : "node"
+  },
+  "kosaraju_scc" : {
+    "num_sccs" : 2,
+    "sccs" : [ [ 0, 3, 5, 2, 1, 10, 8, 6, 14, 11, 7, 15, 4, 9, 13 ], [ 12 ] ],
+    "operations_count" : 108,
+    "execution_time_ns" : 23500
+  },
+  "condensation_graph" : {
+    "vertices" : 2,
+    "edges" : 1
+  },
+  "topological_sort" : {
+    "topological_order" : [ 0, 6, 8, 10, 1, 15, 12, 2, 14, 7, 4, 11, 5, 3, 13, 9 ],
+    "operations_count" : 54,
+    "execution_time_ns" : 8400
+  },
+  "shortest_path" : {
+    "source" : 6,
+    "destination" : "all_reachable",
+    "paths" : { },
+    "operations_count" : 0,
+    "execution_time_ns" : 300
+  },
+  "longest_path" : {
+    "critical_path_length" : 0,
+    "critical_path" : [ ],
+    "node_durations" : [ ],
+    "operations_count" : 0,
+    "execution_time_ns" : 100
+  },
+  "total_operations_count" : 162,
+  "total_execution_time_ns" : 32300
+}, {
+  "graph_id" : 9,
+  "input_stats" : {
+    "vertices" : 20,
+    "edges" : 55,
+    "density" : "sparse",
+    "variant" : "multiple_sccs",
+    "source" : 10,
+    "weight_model" : "node"
+  },
+  "kosaraju_scc" : {
+    "num_sccs" : 4,
+    "sccs" : [ [ 0, 2, 1, 6, 3, 5, 4, 10, 9, 8, 7, 11, 12, 13 ], [ 15, 14 ], [ 17, 16 ], [ 18, 19 ] ],
+    "operations_count" : 150,
+    "execution_time_ns" : 31500
+  },
+  "condensation_graph" : {
+    "vertices" : 4,
+    "edges" : 3
+  },
+  "topological_sort" : {
+    "topological_order" : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 15, 14, 17, 18, 19, 16, 10, 11, 12, 13 ],
+    "operations_count" : 75,
+    "execution_time_ns" : 9500
+  },
+  "shortest_path" : {
+    "source" : 10,
+    "destination" : "all_reachable",
+    "paths" : { },
+    "operations_count" : 0,
+    "execution_time_ns" : 100
+  },
+  "longest_path" : {
+    "critical_path_length" : 0,
+    "critical_path" : [ ],
+    "node_durations" : [ ],
+    "operations_count" : 0,
+    "execution_time_ns" : 100
+  },
+  "total_operations_count" : 225,
+  "total_execution_time_ns" : 41200
+} ]
